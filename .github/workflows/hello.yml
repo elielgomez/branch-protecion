@@ -1,0 +1,17 @@
+name: Merge pull request
+
+on:
+  pull_request:
+    branches:
+      - develop  # Replace with your target branch
+
+jobs:
+  check-merge:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Run check
+        run: echo "Check merge"
