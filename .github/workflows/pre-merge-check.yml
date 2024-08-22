@@ -17,4 +17,4 @@ jobs:
         run: |
           # Replace with your script commands
           echo "Running pre-merge script..."
-          ./check-branch.sh origin/${{ github.head_ref }} origin/${{ github.base_ref }}
+          ./check-branch.sh ${{ github.head_ref }} ${{ github.base_ref }}
