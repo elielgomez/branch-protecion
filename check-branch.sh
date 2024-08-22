@@ -1,9 +1,16 @@
-output=$(git log --oneline --cherry $1...$2)
+git log --oneline --cherry $1...$2
 
-if [ -n "$output" ]; then
+if [ $? -ne 0 ];
+then
 	echo "Cant't merge"
 	exit 1
 else
-	echo "You can merge"
-	exit 0
+    output=$(git log --oneline --cherry $1...$2)
+    if  [ -n "$output" ]; then
+        echo "Can't merge"
+        exit 1
+    else
+        echo "You can merge"
+        exit 0
+    fi
 fi
