@@ -1,3 +1,4 @@
+git fetch
 output=$(git log --oneline --cherry $1...$2)
 
 if [ -n "$output" ]; then
