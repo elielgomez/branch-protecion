@@ -2,6 +2,7 @@ name: Pre-Merge Check
 
 on:
   pull_request:
+    types: [ edited ]
     branches:
       - develop  # Replace with your target branch
 
