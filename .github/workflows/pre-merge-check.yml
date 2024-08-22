@@ -1,0 +1,20 @@
+name: Pre-Merge Check
+
+on:
+  pull_request:
+    branches:
+      - develop  # Replace with your target branch
+
+jobs:
+  run-script:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Run bash script
+        run: |
+          # Replace with your script commands
+          echo "Running pre-merge script..."
+          ./check-branch.sh ${{ github.head_ref }} ${{ github.head_ref }} ${{ github.base_ref }}
